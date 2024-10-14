@@ -1,0 +1,159 @@
+
+tipus
+    porc : vector enter mida 10 inici 2;
+    xai : vector enter mida 10,15,30 inici 1,1,1;
+    vaca : tupla a : enter b : real c : bool ftupla;
+ftipus
+accio aux(entsor x: enter)
+    x := x+2;
+faccio
+accio aux2(entsor x: enter, y: enter)
+    aux(y);
+    x := 10 + y;
+faccio
+funcio swap(entsor x : enter, entsor y: enter) retorna enter
+    t := x;
+    x := y;
+    y := t;
+    retorna t;
+ffuncio
+
+
+accio digues(entsor a: bool, entsor b : real, entsor c : enter, entsor d : real)
+    a := Fals;
+    b := 99;
+    c := 67;
+    d := d + 0.63 * 7 / 4;
+    escriureln(a, " ",b, " ", c, " ", d);
+faccio
+
+
+funcio fcanviar(entsor a: bool, entsor b : real, entsor c : enter, entsor d : real) retorna enter
+    a := Fals;
+    b := 99;
+    c := 67;
+    d := d + 0.63 * 7 / 4;
+    escriureln(a, " ",b, " ", c, " ", d);
+    retorna 3;
+ffuncio
+
+programa prova
+variables
+    a : bool;
+    b : real;
+    c : enter;
+    d : enter;
+    e : enter;
+fvariables
+    ress := 2;
+    aux2(ress,3);
+    escriureln("Res: ",ress);
+	porc[2] := 3;
+	escriureln("porc de 2",porc[2]);
+    xai[10][2][3] := 3;
+    escriureln("xai[10][2][3]: ", xai[10][2][3]);
+    x := 30;
+    y := 10;
+    t := swap(x,y);
+    escriureln(x);
+    escriureln(y);
+    escriureln(t);
+
+    a := Cert;
+    b := 4;
+    c := 6;
+    d := 9;
+
+    escriureln(a, " ",b, " ", c, " ", d);
+    e := fcanviar(a,b,c,d);
+    escriureln(a, " ",b, " ", c, " ", d);
+    escriureln(e);
+
+    escriureln("\n");
+
+    a := Cert;
+    b := 4;
+    c := 6;
+    d := 9;
+
+    escriureln(a, " ",b, " ", c, " ", d);
+    digues(a,b,c,d);
+    escriureln(a, " ",b, " ", c, " ", d);
+    escriureln(e);
+
+    escriure("Introdueix k (bool): ");
+    llegir(k : bool);
+
+    escriureln("Llegit ",k);
+
+    //Prova String
+    escriureln("aaaaaaa\n\nbbbbb . . / ... /$  = :");
+
+
+    vaca.a := 3;
+    escriure("Introdueix vaca.b (real): ");
+    llegir(vaca.b : real);
+    escriureln("Llegit: ", vaca.b);
+
+    escriureln("\nProva inferencia tipus:");
+    pat := 3;
+    pato := 3.0;
+    escriureln(pat, " ", pato);
+
+    exemple : real;
+    escriureln("Introdueix exemple (enter): ");
+    llegir(exemple : enter);
+    escriureln("Exemple: ", exemple);
+
+    escriureln("\nOperacions aritmetiques:");
+
+    aa := 3;
+    bb := 2.5;
+
+    escriureln(aa+bb);
+    escriureln(bb+aa);
+    escriureln(aa-bb);
+    escriureln(bb-aa);
+    escriureln(aa*bb);
+    escriureln(bb*aa);
+    escriureln(aa/bb);
+    escriureln(bb/aa);
+    escriureln("");
+    escriureln("");
+    escriureln(3.0 / 2);
+    escriureln(3 / 2);
+    escriureln(3.0 \ 2);
+    escriureln(3 \ 2);
+    escriureln(7.8372 \ 2.34);
+    escriureln(aa % bb);
+    escriureln(bb % aa);
+    escriureln(15 % 5);
+    escriureln(15.0 % 5.0);
+    escriureln(15 % 4);
+    escriureln(15 % 4.0);
+
+    escriureln("\nProva bucle mentre:");
+    i := 0;
+    mentre i <= 10 fer
+        si i % 4 == 3 llavors escriure(i," "); fsi
+        i := i + 1;
+    fmentre
+
+    escriureln("\n\nProva bucle per:");
+
+    inicial := 0;
+    final := 20;
+    per ii de inicial fins final fer
+        si ii % 2 == 0 llavors escriure("Parell");
+        altrament escriure("Imparell");
+        fsi
+        si ii != final llavors escriure(", "); fsi
+    fper
+
+    escriureln("\n\nProva operador ternari:");
+    escriure("Prova que hauria de donar Cert: ");
+    escriureln((Cert | Fals) & Cert & no Fals ? Cert : Fals);
+    escriure("Prova que hauria de donar Fals: ");
+    escriureln((Cert | Fals) & Cert & no Cert ? Cert : Fals);
+
+fprograma
